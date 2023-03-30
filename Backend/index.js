@@ -13,7 +13,7 @@ mongoose.connect(process.env.DB_URL, { useNewUrlParser: true, useUnifiedTopology
 })
 
 app.route('/').get((req, res) => {
-    // res.send('Jay Shree Krishna');
+    res.send('hello');
 })
 
 router(app);

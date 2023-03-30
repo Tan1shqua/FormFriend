@@ -5,7 +5,7 @@ let StudentSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    Enrollment_no: {
+    enrollment_no: {
         type: Number,
         required: true
     },
@@ -25,8 +25,11 @@ let StudentSchema = new mongoose.Schema({
         type: Boolean,
         required: true
     },
-    forms: {
-        type: Boolean,
-        required: true
-    },
-})
+    forms: [ { type: mongoose.Schema.Types.ObjectId, ref: 'Form' } ]
+});
+
+let StudentModel = new mongoose.Model('Student', StudentSchema);
+
+module.exports = {
+    Student: StudentModel
+}
