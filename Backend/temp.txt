@@ -1,7 +1,6 @@
 -> List of students
 -> Active Forms
 -> Student filled or not 
--> 
 
 
 Database:-
@@ -16,7 +15,6 @@ Database:-
     2) Admin :-
         - Name
         - FacultyID
-        - Created Forms
 
     3) Forms :-
         - Link
@@ -25,4 +23,3 @@ Database:-
         - created by
         - assigned to (Array of students)
         - filled by (Array of students)
-
