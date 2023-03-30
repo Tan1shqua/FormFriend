@@ -1,0 +1,28 @@
+-> List of students
+-> Active Forms
+-> Student filled or not 
+-> 
+
+
+Database:-
+    1) Student :-
+        - Name
+        - Enno
+        - EmailId
+        - branch
+        - sem
+        - D2D (Bool)
+
+    2) Admin :-
+        - Name
+        - FacultyID
+        - Created Forms
+
+    3) Forms :-
+        - Link
+        - Title
+        - description
+        - created by
+        - assigned to (Array of students)
+        - filled by (Array of students)
+
