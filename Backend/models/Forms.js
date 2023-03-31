@@ -32,7 +32,7 @@ let FormSchema = new mongoose.Schema({
     } ],
 });
 
-let FormModel = new mongoose.Model('Form', FormSchema);
+let FormModel = new mongoose.model('Form', FormSchema);
 
 module.exports = {
     Forms: FormModel

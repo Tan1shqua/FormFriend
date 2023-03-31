@@ -9,15 +9,15 @@ let AdminSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    forms: {
+    forms: [ {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Form',
         required: true
-    }
+    } ]
 
 });
 
-let AdminModel = new mongoose.Model('Admin', AdminSchema);
+let AdminModel = new mongoose.model('Admin', AdminSchema);
 
 module.exports = {
     Admin: AdminModel
