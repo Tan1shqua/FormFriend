@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Issue Tracker</title>
+  <link rel="icon" type="image/png" href="https://cdn.freecodecamp.org/universal/favicons/favicon-16x16.png" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/public/style.css">
+</head>
+
+<body>
+  <header>
+    <h1>
+      API Tests
+    </h1>
+  </header>
+  </pre>
+  </section>
+  <hr style='margin: 0 50px'>
+  <section id='testui' style='margin-left: 50px;'>
+
+    <!-- <h2 style="text-align: left">Student</h2>
+    <h3>Register Student</h3>
+    <form id="student-registration" class="border">
+      <input type="text" name="name" placeholder="*Name" style="width: 100px" required=''><br>
+      <input type="number" name="enroll_no" placeholder="Enrollment Number" style="width: 100px" required='' /><br>
+      <input type="email" name="email" placeholder="*Email" style="width: 100px" required=''><br>
+      <input type="text" name="branch" placeholder="*Branch" style="width: 100px" required=''><br>
+      <input type="number" name="sem" placeholder="semester" style="width: 100px"><br>
+      <label for="isD2D">is D2D</label>
+      <input type="checkbox" name="isD2D"><br>
+      <button type="submit">Submit</button>
+    </form><br>
+    <a href="/student/register">
+      <h3>Get Students</h3>
+    </a> -->
+
+    <h2 style="text-align: left">Admin</h2>
+    <h3>Register Admin</h3>
+    <form id="admin-registration" class="border">
+      <input type="text" name="name" placeholder="*Name" style="width: 100px" required=''><br>
+      <input type="email" name="email" placeholder="*Email" style="width: 100px" required=''><br>
+      <input type="password" name="password" placeholder="*Password" style="width: 100px" required=''><br>
+      <button type="submit">Submit</button>
+    </form><br>
+    <h3>Login Admin</h3>
+    <form id="admin-login" class="border">
+      <input type="email" name="email" placeholder="*Email" style="width: 100px" required=''><br>
+      <input type="password" name="password" placeholder="*Password" style="width: 100px" required=''><br>
+      <button type="submit">Submit</button>
+    </form><br>
+    <code id='Result'></code>
+  </section>
+  <hr style='margin: 50px; margin-top: 200px'>
+  <!-- Your web-app is https, so your scripts need to be too -->
+  <script src="https://code.jquery.com/jquery-2.2.1.min.js"
+    integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00=" crossorigin="anonymous"></script>
+  <script>
+    $(function () {
+      $('#admin-registration').submit(function (e) {
+        console.log(e)
+        $.ajax({
+          url: '/admin/register',
+          type: 'post',
+          data: $('#admin-registration').serialize(),
+          success: function (data) {
+            $('#Result').text(JSON.stringify(data));
+          }
+        });
+        e.preventDefault();
+      });
+      $('#admin-login').submit(function (e) {
+        $.ajax({
+          url: '/admin/login',
+          type: 'post',
+          data: $('#admin-login').serialize(),
+          success: function (data) {
+            $('#Result').text(JSON.stringify(data));
+          }
+        });
+        e.preventDefault();
+      });
+    });
+  </script>
+</body>
+
+</html>
