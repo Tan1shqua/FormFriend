@@ -1,11 +1,16 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt')
 
 let AdminSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
     },
-    facultyId: {
+    email: {
+        type: String,
+        required: true
+    },
+    password: {
         type: String,
         required: true
     },
@@ -17,8 +22,25 @@ let AdminSchema = new mongoose.Schema({
 
 });
 
+
 let AdminModel = new mongoose.model('Admin', AdminSchema);
+let createAdmin = async ({ name, email, password }) => {
+    let myUser = await AdminModel.findOne({ email: email });
+    if (myUser) {
+        // User already exist
+        return myUser;
+    }
+
+    myUser = await AdminModel.create({
+        name: name,
+        email: email,
+        password: password
+    })
+
+    return myUser;
+}
 
 module.exports = {
-    Admin: AdminModel
+    Admin: AdminModel,
+    createAdmin: createAdmin
 }

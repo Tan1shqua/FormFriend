@@ -15,12 +15,10 @@ let FormSchema = new mongoose.Schema({
     },
     branch: {
         type: String,
-        required: true
     },
     created_by: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Admin',
-        required: true
     },
     assigned_to: [ {
         type: mongoose.Schema.Types.ObjectId,
